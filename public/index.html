@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Store</title>
+</head>
+<body>
+<div id="app">
+  <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand mx-2" href="#">
+        Vue Store
+      </a>
+      <div class="navbar-nav">
+        <a class="nav-link p-0" href="#">
+
+          <!-- CartButton component -->
+          <curt-button :count="count"></curt-button>
+
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ProductsList component -->
+    <!-- <img class="card-img-top" src="/public/img/macbook-pro.jpeg" alt="macbook-pro"> -->
+    <product-list :products="products"></product-list>
+  </main>
+
+  <!-- CartModal component -->
+  <cart-modal></cart-modal>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

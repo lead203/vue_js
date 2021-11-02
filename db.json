@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "title": "Apple MacBook Pro 13\" Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)",
+            "category": "Computer & Accessories",
+            "price": "1499",
+            "image": "img/macbook-pro.jpeg",
+            "is_available": true
+        },
+        {
+            "id": 1,
+            "title": "Apple iMac Space Gray Late 2020 (Apple Silicon M1, 16GB RAM, 256GB SSD)",
+            "category": "Computer & Accessories",
+            "price": "3999",
+            "image": "img/imac.jpeg",
+            "is_available": false
+        }
+    ]
+}
