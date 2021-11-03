@@ -26,7 +26,7 @@
             <input type="text" v-model="phone" class="form-control" id="phone" placeholder="+38(099) 999-99-99">
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button :disabled="isAllValid" type="submit" class="btn btn-success">
+            <button :disabled="isVaid" type="submit" class="btn btn-success">
             Place Order
             </button>
         </div>
@@ -126,6 +126,11 @@ export default ({
             }
         },
     },
+    computed: {
+        isVaid: function() {
+            return this.isAllValid
+        }
+    }
 })
 
 </script>
