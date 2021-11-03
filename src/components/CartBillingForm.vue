@@ -26,7 +26,7 @@
             <input type="text" v-model="phone" class="form-control" id="phone" placeholder="+38(099) 999-99-99">
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" class="btn btn-success">
+            <button :disabled="isAllValid" type="submit" class="btn btn-success">
             Place Order
             </button>
         </div>
@@ -44,6 +44,13 @@ export default ({
         address: '',
         email: '',
         phone: '',
+        isValidFirstName: true,
+        isValidLastName: true,
+        isValidCity: true,
+        isValidAddress: true,
+        isValidEmail: true,
+        isValidPhone: true,
+        isAllValid: true
     }),
     methods: {
         onSubmit(e) {
@@ -56,7 +63,69 @@ export default ({
             console.log('phone: '+this.phone)
             form.reset()
         }
-    }
+    },
+    watch: {
+        firstName(newValue) {
+            this.isValidFirstName = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidFirstName = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+        lastName(newValue) {
+            this.isValidLastName = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidLastName = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+        city(newValue) {
+            this.isValidCity = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidCity = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+        address(newValue) {
+            this.isValidAddress = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidAddress = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+        email(newValue) {
+            this.isValidEmail = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidEmail = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+        phone(newValue) {
+            this.isValidPhone = true
+            if(newValue.length > 0) {
+                console.log(newValue.length)
+                this.isValidPhone = false
+                if(!this.isValidFirstName && !this.isValidLastName && !this.isValidCity && !this.isValidAddress && !this.isValidEmail && !this.isValidPhone) {
+                    this.isAllValid = false
+                }
+            }
+        },
+    },
 })
 
 </script>
